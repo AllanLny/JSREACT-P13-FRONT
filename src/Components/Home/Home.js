@@ -9,8 +9,9 @@ import LogoFeature2 from "../Assets/icon-money.png"
 import LogoFeature3 from "../Assets/icon-security.png"
 
 
-export default function Home() {
 
+
+export default function Home() {
   return (
     <>
     <Header/>
@@ -24,3 +25,4 @@ export default function Home() {
 </>
   )
 }
+ 
