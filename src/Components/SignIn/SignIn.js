@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../SignIn/SignIn.css";
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import { useDispatch, useSelector } from "react-redux";
-import { loginSuccess, setUser} from "../../actions/userSlice";
+import { useDispatch } from "react-redux";
+import { loginSuccess} from "../../actions/userSlice";
 
 const SignIn = () => {
   const dispatch = useDispatch();

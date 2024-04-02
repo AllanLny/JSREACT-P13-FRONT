@@ -28,7 +28,7 @@ export default function Header() {
       <div>
         {user.connected ? (
   <div className="profilNav">
-    <NavLink className="main-nav-item" to="user">
+    <NavLink className="main-nav-item" to="/user">
       <i className="fa fa-user-circle"></i>
       {user.firstName}
     </NavLink>
