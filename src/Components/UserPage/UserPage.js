@@ -8,10 +8,12 @@ import "./UserPage.css";
 import MoneyCards from '../MoneyCards/MoneyCards';
 
 export default function UserPage() {
+  const user = useSelector(state => state.user);
   const dispatch = useDispatch();
   const token = useSelector((state) => state.user.token);
 
   const fetchUserData = async () => {
+    
     if (!token) {
       console.error("Token is missing");
       return;
@@ -50,8 +52,8 @@ export default function UserPage() {
 
 
   
-const [firstName, setFirstName] = useState("");
-const [lastName, setLastName] = useState("");
+  const [firstName, setFirstName] = useState(user.firstName || "");
+  const [lastName, setLastName] = useState(user.lastName || "");
 const [isEditing, setIsEditing] = useState(false);
 
   const modifyName = async () => {
@@ -62,14 +64,15 @@ const [isEditing, setIsEditing] = useState(false);
   
     try {
       const response = await fetch("http://localhost:3001/api/v1/user/profile", {
+        
         method: "put",
         headers: {
           "Content-Type": "application/json",
           "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify({
-          firstName,
-          lastName
+          firstName: firstName || user.firstName,
+          lastName: lastName || user.lastName
         })
       });
   
@@ -83,7 +86,7 @@ const [isEditing, setIsEditing] = useState(false);
     }
   };
 
-  const user = useSelector(state => state.user);
+
   return (
     <>
       <Header/>

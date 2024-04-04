@@ -30,15 +30,11 @@ const userSlice = createSlice({
       state.email = action.payload.email;
       state.connected = true;
     },
-    updateUser: (state, action) => {
-      state.firstName = action.payload.firstName;
-      state.lastName = action.payload.lastName;
-    }
   },
 });
 
 
 
-export const { loginSuccess, logoutSuccess, setUser, updateUser} = userSlice.actions;
+export const { loginSuccess, logoutSuccess, setUser, } = userSlice.actions;
 export default userSlice.reducer;
 

@@ -100,3 +100,22 @@
   .BalanceHeader{
     margin-right: 10%;;
   }
+
+
+  @media screen and (max-width: 1109px){
+
+    .accountContent{
+      width: 35%;
+    }
+    
+    
+  }
+
+  @media screen and (max-width: 856px){
+
+    .accountContent{
+      width: 50%;
+    }
+    
+    
+  }
